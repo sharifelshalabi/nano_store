@@ -5,7 +5,6 @@ import '../../../../core/utils/navigation.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/review.dart';
 import '../../../products/data/products_list_model.dart';
-import '../../../products/data/products_response_model.dart';
 
 class ProductDetail extends StatelessWidget {
   final Product product;
@@ -28,40 +27,51 @@ class ProductDetail extends StatelessWidget {
                 ),
               ),
             ),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.all(16),
-                    child: CustomIconButton(
-                      onPressed: () {
-                        Navigation.pop(context);
-                      },
-                      color: ColorConstant.gray500,
-                      icon: Icons.arrow_back,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(16),
+                      child: CustomIconButton(
+                        onPressed: () {
+                          Navigation.pop(context);
+                        },
+                        color: ColorConstant.gray500,
+                        icon: Icons.arrow_back,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(16),
+                      child: CustomIconButton(
+                        onPressed: () {},
+                        color: ColorConstant.gray500,
+                        icon: Icons.more_vert,
+                      ),
+                    )
+                  ],
+                ),
+                Container(
+                  width: 10000,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                    ColorConstant.primary.withOpacity(0.3),
+                    ColorConstant.secondary.withOpacity(0.3),
+                  ])),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 20.0, left: 24, right: 8, bottom: 8),
+                    child: Text(
+                      'Details',
+                      style: TextStyle(
+                          color: ColorConstant.whiteA700, fontSize: 22),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.all(16),
-                    child: CustomIconButton(
-                      onPressed: () {},
-                      color: ColorConstant.gray500,
-                      icon: Icons.more_vert,
-                    ),
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16,right: 8,top: 8,bottom: 8),
-                child: Text(
-                  'Details',
-                  style:
-                      TextStyle(color: ColorConstant.black900, fontSize: 22),
-                ),
-              )
-            ]),
+                )
+              ],
+            ),
           ),
           DraggableScrollableSheet(
             maxChildSize: 0.6,
@@ -72,8 +82,15 @@ class ProductDetail extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-
-
+                    width: 10000,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          ColorConstant.primary.withOpacity(0.3),
+                          ColorConstant.secondary.withOpacity(0.3),
+                        ],
+                      ),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 24, right: 8, bottom: 8),
@@ -82,15 +99,6 @@ class ProductDetail extends StatelessWidget {
                         style: TextStyle(
                             color: ColorConstant.whiteA700, fontSize: 22),
                       ),
-                    ),
-                    width: 10000,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          ColorConstant.primary.withOpacity(0.3),
-                          ColorConstant.secondary.withOpacity(0.3),
-                        ]
-                      )
                     ),
                   ),
                   Expanded(

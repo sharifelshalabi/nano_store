@@ -5,7 +5,6 @@ import 'package:untitled1/core/constants/app_colors.dart';
 import '../../../../core/utils/navigation.dart';
 import '../../../single product/presentation/pages/product_detail.dart';
 import '../../data/products_list_model.dart';
-import '../../data/products_response_model.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -29,7 +28,7 @@ class ProductItem extends StatelessWidget {
             width: double.infinity,
             height: 200,
             decoration: BoxDecoration(
-               borderRadius: const BorderRadius.all(Radius.circular(15)),
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
               image: DecorationImage(
                 fit: BoxFit.contain,
                 image: CachedNetworkImageProvider(
@@ -42,12 +41,20 @@ class ProductItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-
+                    width: 100,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          ColorConstant.gray400.withOpacity(0.3),
+                          ColorConstant.gray500.withOpacity(0.3),
+                        ],
+                      ),
+                    ),
                     margin: const EdgeInsets.all(8),
-                     child: Text(
+                    child: Text(
                       '${product.price}' + ' AED',
                       style: TextStyle(
-                          color: ColorConstant.black900, fontSize: 22),
+                          color: ColorConstant.whiteA700, fontSize: 18),
                     ),
                   ),
                   const Spacer(),

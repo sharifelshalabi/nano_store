@@ -1,14 +1,10 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:blocer/blocer.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/core/constants/app_assets.dart';
 import 'package:untitled1/core/constants/app_decoration.dart';
 import 'package:untitled1/core/utils/navigation.dart';
-import 'package:untitled1/features/login/data/login_request_model.dart';
-import 'package:untitled1/features/login/data/login_response_model.dart';
 import 'package:untitled1/features/login/domain/auth_bloc.dart';
-import 'package:untitled1/features/login/domain/login_repository.dart';
 import 'package:untitled1/features/login/presentation/widgets/rounded_button.dart';
 import 'package:untitled1/features/products/presentation/pages/products_details.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -16,7 +12,6 @@ import '../../../../core/constants/app_styles.dart';
 import '../../../../core/utils/size_utils.dart';
 import '../../../../core/widgets/custom_image_view.dart';
 import '../widgets/textfield_widget.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter_bloc/flutter_bloc.dart';
 class LoginPage extends StatelessWidget {
   TextEditingController email = TextEditingController(text: "mor_2314");

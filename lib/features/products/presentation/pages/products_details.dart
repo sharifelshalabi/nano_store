@@ -5,9 +5,6 @@ import 'package:untitled1/features/products/domain/product_bloc.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../data/products_list_model.dart';
 import '../widgets/product_item.dart';
-import '../../data/products_response_model.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductListPage extends StatefulWidget {
@@ -18,13 +15,10 @@ class ProductListPage extends StatefulWidget {
 }
 
 class _ProductListPageState extends State<ProductListPage> {
-
-
   @override
   void initState() {
     super.initState();
-   }
-
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +27,8 @@ class _ProductListPageState extends State<ProductListPage> {
         title: 'All Products ',
         color: Colors.grey.shade200,
         titleColor: ColorConstant.black900,
-
       ),
-      body: Blocer<ProductsCubit,ProductsResponseModel>.get(
+      body: Blocer<ProductsCubit, ProductsResponseModel>.get(
         builder: (ProductsResponseModel model) {
           List<Product> products = model.items!;
           return ListView.separated(
@@ -59,9 +52,4 @@ class _ProductListPageState extends State<ProductListPage> {
       ),
     );
   }
-
-
-
-
-
 }

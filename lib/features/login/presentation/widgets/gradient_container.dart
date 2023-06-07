@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text_widget.dart';
-
 class GradientContainer extends StatelessWidget {
    GradientContainer({super.key, this.widget});
   Widget? widget;
